@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bengkel Otomotif SMK Pratama - Service mobil profesional dan terjangkau.">
+  <title>Bengkel Otomotif SMK Pratama</title>
+  <style>
+    :root{
+      --navy:#06162d; --navy2:#0b2344; --green:#8fce16; --blue:#1377d4;
+      --white:#f5f7fb; --muted:#b9c5d6; --card:rgba(10,31,59,.88);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Arial,Helvetica,sans-serif;color:var(--white);
+      background:radial-gradient(circle at top,#12365f 0,#06162d 42%,#030b17 100%);
+      line-height:1.55;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1120px,92%);margin:auto}
+    header{
+      position:sticky;top:0;z-index:20;
+      background:rgba(3,12,25,.9);backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(255,255,255,.1);
+    }
+    nav{height:70px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:900;letter-spacing:.5px;font-size:18px}
+    .brand span{color:var(--green)}
+    nav ul{display:flex;gap:26px;list-style:none;font-weight:700;font-size:14px}
+    nav a:hover{color:var(--green)}
+    .menu{display:none;background:none;border:0;color:white;font-size:26px}
+    .hero{padding:70px 0 55px;position:relative;overflow:hidden}
+    .hero:before{
+      content:"";position:absolute;inset:0;opacity:.16;
+      background-image:linear-gradient(120deg,#06162d 10%,transparent 55%),url("poster.jpg");
+      background-size:cover;background-position:center top;filter:blur(1px);
+    }
+    .hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+    .eyebrow{display:inline-block;padding:7px 12px;border:1px solid rgba(143,206,22,.5);
+      color:var(--green);border-radius:999px;font-weight:800;font-size:12px;letter-spacing:1px}
+    h1{font-size:clamp(40px,6vw,72px);line-height:.98;margin:18px 0}
+    h1 span{color:var(--green)}
+    .hero p{font-size:18px;color:#d5deeb;max-width:620px}
+    .buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{padding:14px 20px;border-radius:12px;font-weight:900;display:inline-flex;align-items:center;gap:8px}
+    .primary{background:var(--green);color:#102000}
+    .secondary{border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06)}
+    .poster{
+      width:100%;max-width:510px;margin:auto;border-radius:22px;display:block;
+      box-shadow:0 25px 70px rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.18)
+    }
+    section{padding:72px 0}
+    .section-title{text-align:center;margin-bottom:38px}
+    .section-title h2{font-size:36px;margin-bottom:8px}
+    .section-title p{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .grid.two{grid-template-columns:repeat(2,1fr)}
+    .card{
+      background:var(--card);border:1px solid rgba(255,255,255,.1);border-radius:18px;
+      padding:25px;box-shadow:0 14px 35px rgba(0,0,0,.18)
+    }
+    .icon{font-size:32px;margin-bottom:12px}
+    .card h3{margin-bottom:7px}
+    .card p{color:var(--muted);font-size:14px}
+    .service-list{list-style:none;display:grid;gap:12px;margin-top:16px}
+    .service-list li{padding:12px 14px;background:rgba(255,255,255,.045);border-radius:10px}
+    .service-list b{color:var(--green)}
+    .features{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .feature{text-align:center;padding:22px 12px;border-radius:16px;background:rgba(19,119,212,.12);border:1px solid rgba(19,119,212,.25)}
+    .feature .icon{font-size:30px}
+    .contact{
+      background:linear-gradient(135deg,rgba(143,206,22,.14),rgba(19,119,212,.12));
+      border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:38px
+    }
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+    .phone{font-size:clamp(25px,4vw,38px);font-weight:900;margin:10px 0;color:white}
+    .phone span{display:block}
+    .area{color:#d5deeb}
+    footer{padding:30px 0;border-top:1px solid rgba(255,255,255,.1);color:var(--muted);font-size:13px}
+    .float-wa{position:fixed;right:20px;bottom:20px;z-index:30;background:#25d366;color:white;
+      width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:28px;
+      box-shadow:0 10px 25px rgba(0,0,0,.35)}
+    @media(max-width:800px){
+      nav ul{display:none}.menu{display:block}
+      .hero{padding-top:42px}.hero-grid,.contact-grid{grid-template-columns:1fr}
+      .grid,.grid.two{grid-template-columns:1fr}.features{grid-template-columns:repeat(2,1fr)}
+      .poster{max-width:600px}.section-title h2{font-size:30px}
+    }
+    @media(max-width:450px){.features{grid-template-columns:1fr}.contact{padding:25px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <div class="brand">BENGKEL OTOMOTIF <span>SMK PRATAMA</span></div>
+      <button class="menu" aria-label="Menu">☰</button>
+      <ul>
+        <li><a href="#layanan">Layanan</a></li>
+        <li><a href="#keunggulan">Keunggulan</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">SERVICE MOBIL • PROFESIONAL • TERJANGKAU</span>
+        <h1>Kami Datang,<br><span>Mobil Anda Nyaman!</span></h1>
+        <p>Layanan service mobil mobile dari Bengkel Otomotif SMK Pratama. Dikerjakan teknisi terlatih dengan peralatan modern dan pelayanan terbaik.</p>
+        <div class="buttons">
+          <a class="btn primary" href="https://wa.me/6287797700689?text=Halo%20Bengkel%20Otomotif%20SMK%20Pratama,%20saya%20ingin%20konsultasi%20service%20mobil." target="_blank">💬 Hubungi via WhatsApp</a>
+          <a class="btn secondary" href="#layanan">Lihat Layanan ↓</a>
+        </div>
+      </div>
+      <img class="poster" src="poster.jpg" alt="Promosi Bengkel Otomotif SMK Pratama">
+    </div>
+  </section>
+
+  <section id="layanan">
+    <div class="container">
+      <div class="section-title">
+        <h2>Layanan Bengkel</h2>
+        <p>Perawatan rutin sampai perbaikan khusus kendaraan Anda.</p>
+      </div>
+      <div class="grid two">
+        <article class="card">
+          <div class="icon">🔧</div>
+          <h3>Service Rutin</h3>
+          <ul class="service-list">
+            <li><b>Ganti oli & filter</b><br><small>Oli bersih, mesin lebih awet & bertenaga.</small></li>
+            <li><b>Tune-up lengkap & cek kelistrikan</b><br><small>Mesin optimal, hemat bahan bakar.</small></li>
+            <li><b>Service rem mobil</b><br><small>Pengereman aman, berkendara nyaman.</small></li>
+          </ul>
+        </article>
+        <article class="card">
+          <div class="icon">🚗</div>
+          <h3>Service Khusus</h3>
+          <ul class="service-list">
+            <li><b>Repair body, painting & modifikasi</b><br><small>Perbaikan body, pengecatan, dan modifikasi custom.</small></li>
+            <li><b>Perbaikan & ganti kopling</b><br><small>Perpindahan gigi lebih halus.</small></li>
+            <li><b>Service AC mobil</b><br><small>Total service & pengisian AC.</small></li>
+            <li><b>Pengerjaan tepat & bergaransi</b><br><small>Garansi untuk layanan tertentu.</small></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="keunggulan">
+    <div class="container">
+      <div class="section-title">
+        <h2>Kenapa Pilih Kami?</h2>
+        <p>Belajar dengan standar industri, melayani dengan profesional.</p>
+      </div>
+      <div class="features">
+        <div class="feature"><div class="icon">📍</div><b>Service Mobile</b><p>Kami datang ke lokasi Anda.</p></div>
+        <div class="feature"><div class="icon">👨‍🔧</div><b>Teknisi Terlatih</b><p>Dikerjakan siswa & guru pembimbing berpengalaman.</p></div>
+        <div class="feature"><div class="icon">⏱️</div><b>Pengerjaan Efisien</b><p>Cepat, tepat & sesuai kebutuhan.</p></div>
+        <div class="feature"><div class="icon">🛡️</div><b>Garansi Service</b><p>Untuk layanan tertentu.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontak">
+    <div class="container">
+      <div class="contact">
+        <div class="contact-grid">
+          <div>
+            <span class="eyebrow">BUTUH SERVICE MOBIL?</span>
+            <h2 style="font-size:38px;margin:14px 0 4px">Hubungi Kami Sekarang!</h2>
+            <div class="phone">
+              <span>📱 0877-9770-0689</span>
+              <span>📱 0812-2198-8273</span>
+            </div>
+            <p class="area">📍 Area layanan: <b>Bogor dan sekitarnya</b></p>
+            <div class="buttons">
+              <a class="btn primary" href="https://wa.me/6287797700689" target="_blank">WhatsApp Sekarang</a>
+            </div>
+          </div>
+          <div style="text-align:center">
+            <img src="poster.jpg" alt="Scan WhatsApp" style="width:min(300px,80%);border-radius:14px">
+            <p style="margin-top:10px;color:var(--muted)">Scan poster untuk terhubung melalui WhatsApp.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">© 2026 Bengkel Otomotif SMK Pratama • Pendidikan Berkualitas • Keterampilan Nyata • Layanan Untuk Semua</div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/6287797700689" target="_blank" aria-label="WhatsApp">☏</a>
+</body>
+</html>
